@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frags.DirectorSearchFragment">
+
+    <LinearLayout
+        android:id="@+id/director_search_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/director_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:hint="@string/director_e_g_tim_burton"
+            android:inputType="text"
+            style="@style/Widget.AppCompat.EditText"
+            android:textColor="#CCCCCC"
+            android:textColorHint="#999999"
+            android:background="#353535" />
+
+        <Button
+            android:id="@+id/start_director_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:text="@string/search"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:background="@drawable/button_shape"
+            android:layout_marginLeft="4dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/director_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/director_search_input_layout">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/single_row_layout"
+            android:id="@+id/director_movie_list"
+            android:dividerHeight="2px"
+            android:divider="#999999"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

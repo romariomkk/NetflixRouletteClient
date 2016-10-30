@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:id="@+id/movie_image"
+        android:contentDescription="IMAGE ASSET"
+        android:paddingRight="2dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:paddingLeft="2dp"
+        android:textColor="#999999">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_info"
+            android:text="@string/title"
+            android:textSize="20sp"
+            android:textColor="#999999"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/director_info"
+            android:layout_below="@id/title_info"
+            android:text="@string/director"
+            android:textSize="20sp"
+            android:textColor="#999999"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/category_info"
+            android:layout_below="@id/director_info"
+            android:text="@string/category"
+            android:textSize="20sp"
+            android:textColor="#999999"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/category_info">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:id="@+id/rating_info"
+                android:text="@string/rating"
+                android:textSize="20sp"
+                android:textColor="#999999"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:id="@+id/release_year_info"
+                android:text="@string/release_year"
+                android:textSize="20sp"
+                android:textColor="#999999"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Netflix Roulette</string>
+
+    <string name="title_activity_main">Main Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="saved_movies">Saved movies</string>
+    <string name="search_by_director">Search by Director</string>
+    <string name="search_by_artist">Search by Title</string>
+    <string name="title_activity_search_by_title">SearchByTitleActivity</string>
+    <string name="title_activity_search_by_director">SearchByDirectorActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_title_e_g_avatar">Movie Title e.g. \'Avatar\'</string>
+    <string name="search">Search</string>
+    <string name="by_roman_leizerovych">by Roman Leizerovych</string>
+    <string name="netflix_roulette_client">Netflix Roulette Client</string>
+    <string name="roulette_icon">Roulette Icon</string>
+    <string name="director_e_g_tim_burton">Director e.g. Tim Burton</string>
+    <string name="rating">RATING:\n <b>%1$s</b></string>
+    <string name="release_year">YEAR: <b>%1$s</b></string>
+    <string name="title">TITLE: <b>%1$s</b></string>
+    <string name="director">DIRECTOR: <b>%1$s</b></string>
+    <string name="category">CATEGORY: <b>%1$s</b></string>
+    <string name="summary">SUMMARY:\n<b>%1$s</b></string>
+    <string name="save">Save</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_and_info_layout">
+
+        <ImageView
+            android:id="@+id/movie_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_small" />
+
+        <TextView
+            android:id="@+id/rating_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:textSize="20sp"
+            android:text="@string/rating"
+            android:textColor="#999999"/>
+
+        <TextView
+            android:id="@+id/release_year_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:textSize="20sp"
+            android:text="@string/release_year"
+            android:textColor="#999999"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_and_info_layout"
+        android:text="@string/title"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#999999"/>
+
+    <TextView
+        android:id="@+id/director_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_info"
+        android:text="@string/director"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#999999"/>
+
+    <TextView
+        android:id="@+id/category_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/director_info"
+        android:text="@string/category"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#999999"/>
+
+</RelativeLayout>

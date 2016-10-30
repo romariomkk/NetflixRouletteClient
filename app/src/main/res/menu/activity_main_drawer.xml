@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/title_search"
+            android:icon="@drawable/header"
+            android:title="@string/search_by_artist" />
+        <item
+            android:id="@+id/director_search"
+            android:icon="@drawable/director"
+            android:title="@string/search_by_director" />
+        <item
+            android:id="@+id/saved_movies"
+            android:icon="@drawable/film"
+            android:title="@string/saved_movies" />
+    </group>
+
+</menu>

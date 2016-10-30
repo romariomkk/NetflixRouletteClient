@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#B9090B</color>
+    <color name="colorAccent">#B9090B</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="toolbarColor">#B9090B</color>
+
+    <color name="background">#171717</color>
+
+</resources>
