@@ -16,6 +16,7 @@ public class MovieModel implements Serializable{
     String category;
     String rating;
     String releaseYear;
+    String imgUrl;
     transient Bitmap poster;
     String summary;
 
@@ -39,6 +40,8 @@ public class MovieModel implements Serializable{
         return releaseYear;
     }
 
+    public String getImgUrl() { return imgUrl; }
+
     public Bitmap getPoster() {
         return poster;
     }
@@ -47,13 +50,14 @@ public class MovieModel implements Serializable{
 
     public MovieModel(String title, String director,
                       String category, String rating,
-                      String releaseYear, Bitmap poster,
+                      String releaseYear,String imgUrl, Bitmap poster,
                       String summary) {
         this.title = title;
         this.director = director;
         this.category = category;
         this.rating = rating;
         this.releaseYear = releaseYear;
+        this.imgUrl = imgUrl;
         this.poster = poster;
         this.summary = summary;
     }
@@ -67,6 +71,7 @@ public class MovieModel implements Serializable{
                 ", category='" + category + '\'' +
                 ", rating='" + rating + '\'' +
                 ", releaseYear='" + releaseYear + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
                 /*", poster='" + poster + '\'' +*/
                 ", summary='" + summary + '\'' +
                 '}');

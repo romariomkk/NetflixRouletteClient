@@ -111,6 +111,7 @@ public class NetflixRouletteEx {
                 currObj.get("category").toString(),
                 currObj.get("rating").toString(),
                 currObj.get("release_year").toString(),
+                currObj.get("poster").toString(),
                 image,
                 currObj.get("summary").toString());
     }

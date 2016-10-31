@@ -63,8 +63,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
 
             try{
                 URL url = new URL(imageUrl);
-                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-                InputStream stream = conn.getInputStream();
+                InputStream stream = url.openStream();
                 image = BitmapFactory.decodeStream(stream, null, options);
 
                 int imageWidth = options.outWidth;
@@ -75,8 +74,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
                     getImage(imageUrl);
                 }else{
                     options.inJustDecodeBounds = false;
-                    conn = (HttpURLConnection) url.openConnection();
-                    stream = conn.getInputStream();
+                    stream = url.openStream();
                     image = BitmapFactory.decodeStream(stream, null, options);
                 }
             } catch (MalformedURLException e) {

@@ -89,13 +89,13 @@ public class NavigationViewActivity extends AppCompatActivity
                 Log.i("UIok", "TitleSearchFragment setup on foreground");
                 break;
             case (R.id.director_search):
-                if (isNotTheSameID(R.id.director_search)){
+                if (isNotTheSameID(R.id.director_search)) {
                     setForegroundFrag(new DirectorSearchFragment(), "Search By Director", R.id.director_search);
                 }
                 Log.i("UIok", "DirectorSearchFragment setup on foreground");
                 break;
             case (R.id.saved_movies):
-                if (isNotTheSameID(R.id.saved_movies)){
+                if (isNotTheSameID(R.id.saved_movies)) {
                     setForegroundFrag(new SavedMoviesFragment(), "Saved", R.id.saved_movies);
                 }
                 Log.i("UIok", "SavedMoviesFragment setup on foreground");
@@ -111,15 +111,15 @@ public class NavigationViewActivity extends AppCompatActivity
         return currPageID != id;
     }
 
-    private void refreshForeground(){
+    public void refreshForeground() {
         if (fragToDisplay == null) {
             setForegroundFrag(new SavedMoviesFragment(), "Saved", R.id.saved_movies);
         }
-        fragManager.beginTransaction().replace(R.id.main_content_layout, fragToDisplay).commit();
+        fragManager.beginTransaction().replace(R.id.main_content_layout, fragToDisplay).commitAllowingStateLoss();
         setToolbarTitle();
     }
 
-    private void setForegroundFrag(BasicFragment frag, String title, int pageId){
+    private void setForegroundFrag(BasicFragment frag, String title, int pageId) {
         fragToDisplay = frag;
         mainTitle = title;
         currPageID = pageId;
@@ -128,11 +128,12 @@ public class NavigationViewActivity extends AppCompatActivity
     private void setToolbarTitle() {
         try {
             getSupportActionBar().setTitle(Objects.requireNonNull(mainTitle));
-        }catch (NullPointerException exc){
+        } catch (NullPointerException exc) {
             Log.e("UIerr", "Action Bar title not instantiated");
         }
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {}
+    public void onFragmentInteraction(Uri uri) {
+    }
 }

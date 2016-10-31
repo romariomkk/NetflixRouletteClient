@@ -11,19 +11,19 @@ public class ImageCache {
     LruCache<String, Bitmap> imageWarehouse;
     private static ImageCache cache;
 
-    public static ImageCache getInstance(){
-        if (cache == null){
+    public static ImageCache getInstance() {
+        if (cache == null) {
             cache = new ImageCache();
         }
         return cache;
     }
 
-    public void initCache(){
-        final int maxMemory = (int)(Runtime.getRuntime().maxMemory() / 1024);
-        final int cacheSize = maxMemory/8;
+    public void initCache() {
+        final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        final int cacheSize = maxMemory / 8;
         System.out.println("CacheSize: " + cacheSize);
 
-        imageWarehouse = new LruCache<String, Bitmap>(cacheSize){
+        imageWarehouse = new LruCache<String, Bitmap>(cacheSize) {
             @Override
             protected int sizeOf(String key, Bitmap value) {
                 int bitmapByteCount = value.getRowBytes() * value.getHeight();
@@ -33,7 +33,7 @@ public class ImageCache {
     }
 
     public void addImageToWarehouse(String key, Bitmap value) {
-        if (imageWarehouse != null && imageWarehouse.get(key) == null){
+        if (imageWarehouse != null && imageWarehouse.get(key) == null) {
             imageWarehouse.put(key, value);
         }
     }
@@ -42,12 +42,12 @@ public class ImageCache {
         return (key != null) ? imageWarehouse.get(key) : null;
     }
 
-    public void removeImageFromWarehouse(String key){
+    public void removeImageFromWarehouse(String key) {
         imageWarehouse.remove(key);
     }
 
-    public void clearCache(){
-        if (imageWarehouse != null){
+    public void clearCache() {
+        if (imageWarehouse != null) {
             imageWarehouse.evictAll();
         }
     }

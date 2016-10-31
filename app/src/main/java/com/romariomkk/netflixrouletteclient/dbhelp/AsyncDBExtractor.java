@@ -44,7 +44,7 @@ public class AsyncDBExtractor extends AsyncTask<String, Context, ArrayList<Movie
                     if (image != null) {
                         img = BitmapFactory.decodeByteArray(image, 0, image.length);
                     }
-                    movieList.add(new MovieModel(title, director, null, rating, year, img, summary));
+                    movieList.add(new MovieModel(title, director, null, rating, year, null, img, summary));
                 } while (cursor.moveToNext());
                 Log.i("dbOK", "DB Extracting finished");
             }

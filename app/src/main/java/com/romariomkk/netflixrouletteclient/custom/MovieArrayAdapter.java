@@ -1,6 +1,8 @@
 package com.romariomkk.netflixrouletteclient.custom;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import com.romariomkk.netflixrouletteclient.Model.MovieModel;
 import com.romariomkk.netflixrouletteclient.R;
+import com.romariomkk.netflixrouletteclient.caching.DownloadImageTask;
+import com.romariomkk.netflixrouletteclient.caching.ImageCache;
 
 import java.util.List;
 
@@ -20,6 +24,8 @@ public class MovieArrayAdapter extends ArrayAdapter<MovieModel> {
     Context context;
     List<MovieModel> objects;
 
+    ImageCache imgCache = ImageCache.getInstance();
+
     public MovieArrayAdapter(Context context, int resource, List<MovieModel> objects) {
         super(context, resource, objects);
         this.context = context;
@@ -28,6 +34,8 @@ public class MovieArrayAdapter extends ArrayAdapter<MovieModel> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        imgCache.initCache();
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.single_row_layout, parent, false);
 
@@ -41,7 +49,15 @@ public class MovieArrayAdapter extends ArrayAdapter<MovieModel> {
 
         MovieModel curr = getItem(position);
 
-        image.setImageBitmap(curr.getPoster());
+
+        Bitmap bmp = imgCache.getImageFromWarehouse(curr.getImgUrl());
+        if (bmp != null) {
+            image.setImageBitmap(bmp);
+            Log.i("UIok", "Image from cache initialized");
+        } else {
+            image.setImageBitmap(curr.getPoster());
+            new DownloadImageTask(this, 300, 300).execute(curr.getImgUrl());
+        }
         ratingInfo.setText(context.getString(R.string.rating, curr.getRating()));
         releaseYear.setText(context.getString(R.string.release_year, curr.getReleaseYear()));
         title.setText(context.getString(R.string.title, curr.getTitle()));

@@ -34,7 +34,7 @@ public class RouletteFunctionsEx {
 
         try {
             urlAddress = new URL(url);
-            inStream = (urlAddress).openStream();
+            inStream = urlAddress.openStream();
         }catch (FileNotFoundException e){
             return null;
         }catch (IOException e) {

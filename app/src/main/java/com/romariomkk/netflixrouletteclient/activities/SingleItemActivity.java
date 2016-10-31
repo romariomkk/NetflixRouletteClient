@@ -3,6 +3,7 @@ package com.romariomkk.netflixrouletteclient.activities;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,7 @@ public class SingleItemActivity extends AppCompatActivity {
     DBHandler dbHandler = new DBHandler(this);
     MovieModel currMovie;
     ContentValues values;
+    NavigationViewActivity navViewActivity = new NavigationViewActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,12 @@ public class SingleItemActivity extends AppCompatActivity {
         if (bmpArr != null) {
             values.put("image", bmpArr);
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        //navViewActivity.refreshForeground();
     }
 
     @Override
