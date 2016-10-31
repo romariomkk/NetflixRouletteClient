@@ -56,7 +56,7 @@ public class MovieArrayAdapter extends ArrayAdapter<MovieModel> {
             Log.i("UIok", "Image from cache initialized");
         } else {
             image.setImageBitmap(curr.getPoster());
-            new DownloadImageTask(this, 300, 300).execute(curr.getImgUrl());
+            //new DownloadImageTask(this, 300, 300).execute(curr.getImgUrl());
         }
         ratingInfo.setText(context.getString(R.string.rating, curr.getRating()));
         releaseYear.setText(context.getString(R.string.release_year, curr.getReleaseYear()));
