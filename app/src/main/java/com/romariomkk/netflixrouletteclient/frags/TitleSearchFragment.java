@@ -13,8 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
-import com.romariomkk.netflixrouletteclient.Model.Properties;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.Properties;
 import com.romariomkk.netflixrouletteclient.R;
 import com.romariomkk.netflixrouletteclient.activities.OpenSingleItemActivityListener;
 import com.romariomkk.netflixrouletteclient.custom.MovieArrayAdapter;

@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;

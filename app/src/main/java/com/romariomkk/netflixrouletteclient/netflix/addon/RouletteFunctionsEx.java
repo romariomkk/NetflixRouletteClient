@@ -28,24 +28,23 @@ public class RouletteFunctionsEx {
         return strBuilder.toString();
     }
 
-    public static String readJsonFromUrl(String url)  {
+    public static String readJsonFromUrl(String url) throws FileNotFoundException {
         String jsonText = null;
         InputStream inStream = null;
 
         try {
             urlAddress = new URL(url);
             inStream = urlAddress.openStream();
-        }catch (FileNotFoundException e){
-            return null;
-        }catch (IOException e) {
-            e.printStackTrace();
-            Log.e("INFOerr", "Error occurred while handling URL of request");
+        } catch (FileNotFoundException e) {
+            throw new FileNotFoundException(e.toString());
+        } catch (IOException e) {
+            Log.e("INFOerr", "Error occurred while handling URL of request", e);
         }
 
         if (inStream != null) {
             try (BufferedReader rd = new BufferedReader(new InputStreamReader(inStream, Charset.forName("UTF-8")))) {
                 jsonText = readAll(rd);
-            }catch (IOException exc){
+            } catch (IOException exc) {
                 Log.e("INFOerr", "Error occurred while extracting info from Netflix Roulette");
             }
         }

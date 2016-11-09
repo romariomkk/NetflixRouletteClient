@@ -1,4 +1,4 @@
-package com.romariomkk.netflixrouletteclient.Model;
+package com.romariomkk.netflixrouletteclient.model;
 
 import android.graphics.Bitmap;
 

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
 
 import java.util.ArrayList;
 

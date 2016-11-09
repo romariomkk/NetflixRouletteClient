@@ -1,4 +1,4 @@
-package com.romariomkk.netflixrouletteclient.Model;
+package com.romariomkk.netflixrouletteclient.model;
 
 /**
  * Created by romariomkk on 22.10.2016.

@@ -1,7 +1,5 @@
 package com.romariomkk.netflixrouletteclient.frags;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,16 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
 import com.romariomkk.netflixrouletteclient.R;
 import com.romariomkk.netflixrouletteclient.activities.OpenSingleItemActivityListener;
-import com.romariomkk.netflixrouletteclient.activities.SingleItemActivity;
 import com.romariomkk.netflixrouletteclient.custom.MovieArrayAdapter;
 import com.romariomkk.netflixrouletteclient.dbhelp.AsyncDBExtractor;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 public class SavedMoviesFragment extends BasicFragment implements BasicFragment.OnFragmentInteractionListener {

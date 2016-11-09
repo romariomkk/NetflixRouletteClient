@@ -33,7 +33,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/title_search_result_layout"
@@ -47,6 +47,6 @@
             android:id="@+id/title_movie_list"
             android:dividerHeight="2px" />
 
-    </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>

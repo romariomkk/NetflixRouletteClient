@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
 
 import java.util.ArrayList;
 

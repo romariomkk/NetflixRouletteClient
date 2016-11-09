@@ -6,8 +6,8 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.romariomkk.netflixrouletteclient.Model.MovieModel;
-import com.romariomkk.netflixrouletteclient.Model.Properties;
+import com.romariomkk.netflixrouletteclient.model.MovieModel;
+import com.romariomkk.netflixrouletteclient.model.Properties;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +15,6 @@ import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -47,9 +46,6 @@ public class NetflixRouletteEx {
         searchValue = searchValue.replace(" ", "%20");
         try {
             String jsonStr = RouletteFunctionsEx.readJsonFromUrl(API_URL + field + "=" + searchValue);
-            if (jsonStr == null) {
-                return null;
-            }
 
             Log.i("INFOok", jsonStr);
 
@@ -65,7 +61,11 @@ public class NetflixRouletteEx {
             e.printStackTrace();
             Log.e("INFOerr", "Info about films was not extracted");
             activity.runOnUiThread(() ->
-                    Toast.makeText(activity.getBaseContext(), "Info about films was not extracted", Toast.LENGTH_SHORT).show());
+                Toast.makeText(activity.getBaseContext(), "Info about films was not extracted", Toast.LENGTH_SHORT).show());
+        } catch (FileNotFoundException e) {
+            activity.runOnUiThread(() ->
+                Toast.makeText(activity.getBaseContext(), "No film under this title", Toast.LENGTH_SHORT).show());
+            return null;
         }
 
         if (jsonArray == null && jsonObj == null) { //Objects.isNull() preferred, but here min API level is 21
